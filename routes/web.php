@@ -1,8 +1,6 @@
 <?php
 
-use App\Http\Controllers\ResultsController;
-use App\Livewire\ShowResults;
-use App\Livewire\UploadForm;
+use App\Livewire\EnneagramAssessment;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', UploadForm::class);
-Route::get('/results/{jobId}', ShowResults::class);
+Route::get('/', EnneagramAssessment::class)->name('enneagram.assessment');
+// Route::get('/results/{jobId}', ShowResults::class);

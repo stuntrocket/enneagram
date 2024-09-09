@@ -2,14 +2,14 @@ import:
   - recipe/laravel.php
 
 config:
-  repository: "git@github.com:withoutfanfare/effect.git"
+  repository: "git@github.com:stuntrocket/enneagram.git"
   remote_user: ubuntu
   php_fpm_version: '8.2'
 
 hosts:
   live:
     hostname: effect.stuntrocket.co
-    deploy_path: "/var/www/vhosts/effect.stuntrocket.co/master"
+    deploy_path: "/var/www/vhosts/enneagram.stuntrocket.co/master"
     remote_user: "ubuntu"
 
 tasks:
@@ -20,7 +20,7 @@ tasks:
     - cd: "{{deploy_path}}/current"
     - run: "npm run build"
   site:url:
-    - run: 'curl -s -o /dev/null -w "%{http_code}" https://effect.stuntrocket.co'
+    - run: 'curl -s -o /dev/null -w "%{http_code}" https://enneagram.stuntrocket.co'
 
 after:
   deploy:failed: deploy:unlock
